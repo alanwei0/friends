@@ -17,7 +17,7 @@
 
     p {
         border-bottom: 1px dotted #ccc;
-        padding: 12px 0;
+        padding: 20px 0 4px;
         margin: 0;
     }
 
@@ -25,6 +25,12 @@
         border-bottom: none;
         font-style: normal;
         opacity: 0.65;
+    }
+
+    @media (min-width: 720px) {
+        p, p * {
+            font-size: 20px;
+        }
     }
 </style>
 
