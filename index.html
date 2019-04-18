@@ -1,8 +1,87 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!doctype html>
 <html>
   <head>
     <title>Friends Transcripts</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <style>
+      html {
+        background-image: url(./cover.jpg);
+        background-repeat: repeat-y;
+        background-size: contain;
+      }
+
+      body {
+        font-family: "Georgia";
+        font-style: italic;
+        background: #eee;
+        margin: 0;
+        margin-top: 220px;
+        padding: 0 12px 12px 12px;
+        background: #044795c2;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      h3 {
+        font-style: normal;
+        text-align: center;
+        background: #5a98d8;
+        margin: 8px 0;
+        padding: 12px;
+        color: #fff;
+        border-radius: 4px;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        transition: height linear 0.3s;
+        overflow: hidden;
+        margin: 0;
+        /* opacity: 0; */
+        height: 0;
+      }
+
+      li {
+        display: block;
+        background: #ffffffe6;
+        margin-bottom: 12px;
+        border-radius: 4px;
+        box-shadow: 1px 2px 3px 0px #ccc;
+      }
+
+      a {
+        display: block;
+        text-decoration: none;
+        color: #3488e6;
+        padding: 16px;
+        cursor: pointer;
+      }
+
+      a:visited {
+        color: #666;
+      }
+    </style>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const $seasons = document.querySelectorAll('h3');
+        const $uls = document.querySelectorAll('ul');
+        $seasons.forEach($s => {
+          $s.onclick = function () {
+            const $ul = this.nextElementSibling;
+            if (parseInt($ul.style.height || 0) > 0) {
+              $ul.style.height = 0;
+              // $ul.style.opacity = '0';
+            } else {
+              $ul.style.height = $ul.scrollHeight + 'px';
+              // $ul.style.opacity = '1';
+            }
+          };
+        });
+      });
+    </script>
   </head>
   <body>
 
